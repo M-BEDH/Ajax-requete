@@ -1,20 +1,21 @@
 
-            // function chargerTexte() {
-            //     fetch('./texte.txt') 
-            //         .then(response => {
-            //             if (!response.ok) {
-            //                 throw new Error('Erreur de chargement du fichier texte');
-            //             }
-            //             return response.text();
-            //         })
-            //         .then(data => {
-            //             console.log(data); 
-            //             document.getElementById('contenu').textContent = data; 
-            //         })
-            //         .catch(error => {
-            //              console.error('Erreur AJAX :', error);
-            //         });
-            // }
+            function chargerTexte() {
+                fetch('./texte.txt') 
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erreur de chargement du fichier texte');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        console.log(data); 
+                        document.getElementById('contenu').textContent = data; 
+                    })
+                    .catch(error => {
+                         console.error('Erreur AJAX :', error);
+                    });
+            }
+
 
 
             function chargerUtilisateurs() {
@@ -45,6 +46,7 @@
             }
 
 
+
             function afficherPost() {
                 fetch('https://jsonplaceholder.typicode.com/posts/1')
                     .then(response => {
@@ -57,7 +59,6 @@
                         console.log(data); 
 
                         const post = document.getElementById('afficherPost'); 
-                        // post.innerHTML = ''; // Vide le contenu précédent
                        
                                 const title = document.createElement('h1');
                                 title.textContent = data.title; 
@@ -73,8 +74,7 @@
                     });
             }
 
-            // 2.Quand tu cliques, utilise l’api https://wttr.in/ avec  https://wttr.in/Bordeaux?format=3
-
+        
 
 
            async function afficherMeteo() {
@@ -90,9 +90,6 @@
            }
         
 
-//             1.Ajoute un bouton ‘Charger tous les titres’ et une ul avec l’id titres
-// 2.Quand tu cliques, récupère la liste des posts : https://jsonplaceholder.typicode.com/posts   
-// 3.Affiche chaque title dans un li de la liste
 
 
             function afficherLesTitres() {
